@@ -34,6 +34,7 @@ kubectl apply -f k8s/configmap.yaml
 kubectl apply -f k8s/secrets.yaml
 kubectl apply -f k8s/db-deployment.yaml
 kubectl apply -f k8s/webapp-deployment.yaml
+```
 
 Verify that all pods are running and services are mapped correctly:
 ```bash
