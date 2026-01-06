@@ -37,6 +37,6 @@ kubectl apply -f k8s/webapp-deployment.yaml
 ```
 
 Verify that all pods are running and services are mapped correctly:
-```bash
+```
 kubectl get all
 
