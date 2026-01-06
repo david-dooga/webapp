@@ -43,7 +43,7 @@ kubectl get all
 ```
 ![get_all_display](./images/get-all.png)
 
-🌐 Public Access & Networking
+## 🌐 Public Access & Networking
 While the application is exposed via a NodePort service within the Kubernetes cluster, Minikube runs on an isolated internal network. To bridge the traffic from the EC2 Public IP to the internal Minikube cluster, a port-forwarding tunnel is required.
 
 ## The Challenge: Internal vs. External Networking
