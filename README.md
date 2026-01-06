@@ -30,13 +30,16 @@ The EC2 instance was prepared with Docker and Minikube.
 minikube start --driver=docker
 **Resources were applied in order of dependency:**
 ```
-kubectl apply -f k8s/configmap.yaml
+kubectl apply -f k8s/mongo-config.yaml
 kubectl apply -f k8s/secrets.yaml
-kubectl apply -f k8s/db-deployment.yaml
-kubectl apply -f k8s/webapp-deployment.yaml
+kubectl apply -f k8s/mongo.yaml
+kubectl apply -f k8s/webapp.yaml
 ```
 
 Verify that all pods are running and services are mapped correctly:
 ```
 kubectl get all
 ```
+![get_all_display](./images/get-all.png)
+
+
