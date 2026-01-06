@@ -52,3 +52,15 @@ Minikube's nodes are assigned internal IPs (typically 192.168.49.x) that the AWS
 ## The Solution: Port Forwarding
 To make the webapp accessible from a local laptop browser, I established a tunnel that maps all traffic from the EC2 instance's external interface to the Kubernetes service:
 
+# Run this on the EC2 Instance
+```
+kubectl port-forward --address 0.0.0.0 svc/webapp-service <NodePort>:<Service-Port>
+```
+--address 0.0.0.0: This tells Kubernetes to listen on all available network interfaces, including the EC2 Public IP.
+<NodePort>: The external port opened in the AWS Security Group.
+<Service-Port>: The internal port defined in webapp.yaml (e.g., 80 or 3000).
+
+Once the tunnel is active, the application is reachable at:
+URL: http://<EC2-PUBLIC-IP>:<NodePort>
+
+![webapp_display](./images/webapp-ui.png)
