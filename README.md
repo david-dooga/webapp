@@ -29,7 +29,7 @@ The EC2 instance was prepared with Docker and Minikube.
 
 minikube start --driver=docker
 
-##Resources were applied in order of dependency:
+## Resources were applied in order of dependency:
 ```
 kubectl apply -f k8s/mongo-config.yaml
 kubectl apply -f k8s/secrets.yaml
@@ -46,9 +46,9 @@ kubectl get all
 🌐 Public Access & Networking
 While the application is exposed via a NodePort service within the Kubernetes cluster, Minikube runs on an isolated internal network. To bridge the traffic from the EC2 Public IP to the internal Minikube cluster, a port-forwarding tunnel is required.
 
-##The Challenge: Internal vs. External Networking
+## The Challenge: Internal vs. External Networking
 Minikube's nodes are assigned internal IPs (typically 192.168.49.x) that the AWS Security Group cannot "see" directly. Even if you open the NodePort in the AWS Console, the traffic hits the EC2 instance but doesn't know how to reach the Minikube node.
 
-##The Solution: Port Forwarding
+## The Solution: Port Forwarding
 To make the webapp accessible from a local laptop browser, I established a tunnel that maps all traffic from the EC2 instance's external interface to the Kubernetes service:
 
