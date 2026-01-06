@@ -29,7 +29,7 @@ The EC2 instance was prepared with Docker and Minikube.
 ```bash
 minikube start --driver=docker
 **Resources were applied in order of dependency:**
-```bash
+```
 kubectl apply -f k8s/configmap.yaml
 kubectl apply -f k8s/secrets.yaml
 kubectl apply -f k8s/db-deployment.yaml
