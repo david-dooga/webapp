@@ -26,7 +26,7 @@ The deployment is managed via four modular YAML files:
 
 ### 1. Environment Setup
 The EC2 instance was prepared with Docker and Minikube.
-```bash
+
 minikube start --driver=docker
 **Resources were applied in order of dependency:**
 ```
@@ -39,4 +39,4 @@ kubectl apply -f k8s/webapp-deployment.yaml
 Verify that all pods are running and services are mapped correctly:
 ```
 kubectl get all
-
+```
