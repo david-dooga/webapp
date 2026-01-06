@@ -67,8 +67,13 @@ URL: http://<EC2-PUBLIC-IP>:<NodePort>
 
 # ⚠️ Security Disclaimer & Project Scope
 IMPORTANT: This repository is intended strictly for Testing and Development purposes only.
+
 This project was built to demonstrate Kubernetes orchestration on a standalone AWS EC2 instance. It is not production-ready due to the following security considerations:
-Development Environment: This deployment utilizes Minikube, which is designed for local development. In a production scenario, a managed service like **Amazon EKS** or a high-availability self-managed cluster would be required.
-Secret Management: Sensitive data (MongoDB credentials) is handled via standard Kubernetes Secrets using Base64 encoding. While functional, Base64 is not encryption. For production workloads, integration with a secure vault (e.g., AWS Secrets Manager or HashiCorp Vault) is mandatory.
-Public Exposure: The application is exposed via kubectl port-forward on the 0.0.0.0 interface. This is a temporary bridging method for testing. Production traffic should be managed via an **Ingress** Controller protected by an **ALB (Application Load Balancer) and SSL/TLS certificates**.
-Data Persistence: The MongoDB deployment currently uses **ephemeral storage** or local node paths. Production databases require **persistent volumes** with **regular snapshotting and automated backups**.
+
+**Development Environment:** This deployment utilizes Minikube, which is designed for local development. In a production scenario, a managed service like **Amazon EKS** or a high-availability self-managed cluster would be required.
+
+**Secret Management:** Sensitive data (MongoDB credentials) is handled via standard Kubernetes Secrets using Base64 encoding. While functional, Base64 is not encryption. For production workloads, integration with a secure vault (e.g., AWS Secrets Manager or HashiCorp Vault) is mandatory.
+
+**Public Exposure:** The application is exposed via kubectl port-forward on the 0.0.0.0 interface. This is a temporary bridging method for testing. Production traffic should be managed via an **Ingress** Controller protected by an **ALB (Application Load Balancer) and SSL/TLS certificates**.
+
+**Data Persistence:** The MongoDB deployment currently uses **ephemeral storage** or local node paths. Production databases require **persistent volumes** with **regular snapshotting and automated backups**.
