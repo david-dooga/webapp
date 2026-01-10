@@ -9,10 +9,12 @@ spec:
   selector:
     matchLabels:
       app: webapp
+      version: v1
   template:
     metadata:
       labels:
         app: webapp
+        version: v1
     spec:
       containers:
       - name: webapp
@@ -35,6 +37,13 @@ spec:
             configMapKeyRef:
               name: mongo-config
               key: mongo-url
+        resources:
+         requests:
+           cpu: "100m"     # 10% of 1 core
+           memory: "64Mi"
+         limits:
+           cpu: "200m"     # Max cap
+           memory: "128Mi"      
 
 
 ---
@@ -46,6 +55,7 @@ spec:
   type: NodePort
   selector:
     app: webapp
+    version: v1
   ports:
     - protocol: TCP
       port: 3000
