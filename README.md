@@ -15,7 +15,7 @@ This project demonstrates a containerized web application deployed on a local Ku
 
 ## Architecture
 
-![Architecture diagram](./Images/architecture.excalidraw.png)
+![Architecture diagram](./images/architecture.excalidraw.png)
 
 ---
 
