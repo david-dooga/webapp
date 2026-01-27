@@ -13,6 +13,12 @@ This project demonstrates a containerized web application deployed on a local Ku
 
 ---
 
+## Architecture
+
+![Architecture diagram](./Images/architecture.excalidraw.png)
+
+---
+
 ## 🛠️ Deployment Manifests
 The deployment is managed via four modular YAML files:
 1. `configmap.yaml` - Environment variables and DB hosts.
